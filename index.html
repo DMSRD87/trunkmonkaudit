@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trunk Monk Arborist — Digital Audit by Southern Reach Digital</title>
+<meta name="description" content="A digital audit prepared for Matthew at Trunk Monk Arborist by Southern Reach Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0E1612;
+  --bg-elev: #14201A;
+  --bg-card: #1A2820;
+  --ink: #F2EAD9;
+  --ink-soft: #C9BFA8;
+  --ink-mute: #847B68;
+  --amber: #E89B3C;
+  --amber-soft: #F4C076;
+  --rust: #C45A2C;
+  --moss: #6B8E5A;
+  --line: #2A3A30;
+  --warn: #D85B3D;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Subtle grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER / HERO */
+header.hero {
+  padding: 80px 0 100px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+header.hero::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 155, 60, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--amber);
+}
+
+h1.title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(44px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  animation: fadeUp 0.9s ease-out 0.1s both;
+}
+
+h1.title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber-soft);
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin-bottom: 56px;
+  animation: fadeUp 1s ease-out 0.2s both;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  animation: fadeUp 1.1s ease-out 0.3s both;
+}
+
+.meta-item {
+  font-size: 13px;
+}
+
+.meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  font-size: 11px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.meta-value {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* SECTION */
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.section-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--amber);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+  max-width: 880px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--amber-soft);
+}
+
+.section-intro {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 56px;
+  line-height: 1.65;
+}
+
+/* THE TAKE — section 1 */
+.take {
+  background: var(--bg-elev);
+  position: relative;
+}
+
+.take-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.take-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.take-row:last-child { border-bottom: none; }
+
+.take-label {
+  padding: 32px 32px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--line);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--amber-soft);
+  display: flex;
+  align-items: center;
+}
+
+.take-content {
+  padding: 32px 36px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.take-content strong {
+  color: var(--amber-soft);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .take-row { grid-template-columns: 1fr; }
+  .take-label { border-right: none; border-bottom: 1px solid var(--line); padding: 20px 24px; font-size: 18px; }
+  .take-content { padding: 24px; font-size: 16px; }
+}
+
+/* STATS GRID */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.stat {
+  padding: 36px 28px;
+  border-right: 1px solid var(--line);
+  background: var(--bg-elev);
+  position: relative;
+}
+
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1;
+  color: var(--amber);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.stat-num small {
+  font-size: 0.4em;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+}
+
+/* WORKING — what's already strong */
+.working-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.working-item {
+  padding: 28px 30px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.working-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--moss);
+}
+
+.working-item::before {
+  content: '✓';
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(107, 142, 90, 0.15);
+  color: var(--moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.working-item h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--ink);
+  padding-right: 40px;
+}
+
+.working-item p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .working-list { grid-template-columns: 1fr; }
+}
+
+/* COMPETITION — comparison */
+.compare {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 32px 0;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.compare-row:last-child { border-bottom: none; }
+
+.compare-row.head {
+  background: var(--bg-card);
+  font-family: var(--serif);
+}
+
+.compare-cell {
+  padding: 20px 24px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  line-height: 1.45;
+}
+
+.compare-cell:last-child { border-right: none; }
+
+.compare-cell.metric {
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.compare-row.head .compare-cell {
+  font-size: 19px;
+  color: var(--ink);
+  padding: 24px;
+}
+
+.compare-row.head .compare-cell.tm {
+  color: var(--amber-soft);
+  font-style: italic;
+}
+
+.win {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.lose {
+  color: var(--ink-mute);
+}
+
+@media (max-width: 720px) {
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 14px 18px; }
+  .compare-cell.metric { background: var(--bg-card); }
+  .compare-row:last-child .compare-cell:last-child { border-bottom: none; }
+  .compare-row.head .compare-cell { font-size: 17px; padding: 16px 18px; }
+}
+
+/* FINDINGS */
+.findings {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+
+.finding {
+  padding: 36px 36px;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.finding:last-child { border-bottom: none; }
+
+.finding-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 48px;
+  color: var(--amber);
+  line-height: 0.9;
+}
+
+.finding-body h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.finding-body p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.finding-body p:last-child { margin-bottom: 0; }
+
+.finding-body .impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(232, 155, 60, 0.1);
+  color: var(--amber);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .finding { grid-template-columns: 1fr; gap: 12px; padding: 28px 24px; }
+  .finding-num { font-size: 36px; }
+  .finding-body h4 { font-size: 19px; }
+}
+
+/* PLAN / TIMELINE */
+.plan {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.phase:last-child { border-bottom: none; }
+
+.phase-marker {
+  position: relative;
+}
+
+.phase-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--amber);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.phase-weeks {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.phase-content h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.phase-content p.phase-desc {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+
+.phase-list {
+  list-style: none;
+}
+
+.phase-list li {
+  padding: 10px 0 10px 24px;
+  position: relative;
+  border-bottom: 1px dashed var(--line);
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.phase-list li:last-child { border-bottom: none; }
+
+.phase-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: var(--amber);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .phase { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+  .phase-weeks { font-size: 28px; }
+  .phase-content h3 { font-size: 22px; }
+}
+
+/* INVESTMENT */
+.invest {
+  background: var(--bg-elev);
+}
+
+.invest-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin: 40px 0;
+}
+
+.invest-card {
+  padding: 44px 40px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  position: relative;
+}
+
+.invest-card.featured {
+  border-color: var(--amber);
+  background: var(--bg-card);
+  position: relative;
+}
+
+.invest-card.featured::before {
+  content: 'Start here';
+  position: absolute;
+  top: -12px;
+  left: 36px;
+  background: var(--amber);
+  color: var(--bg);
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.invest-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.invest-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.invest-price {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 56px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.invest-price small {
+  font-size: 0.35em;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-left: 6px;
+  letter-spacing: 0.06em;
+}
+
+.invest-sub {
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+
+.invest-list {
+  list-style: none;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.invest-list li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.invest-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--moss);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .invest-grid { grid-template-columns: 1fr; gap: 24px; }
+  .invest-price { font-size: 44px; }
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 120px 0 100px;
+  background: var(--bg);
+  border-bottom: none;
+}
+
+.cta-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.cta-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.015em;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--amber-soft);
+}
+
+.cta-sub {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 560px;
+  margin: 0 auto 44px;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--amber-soft);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* FOOTER */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.foot-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.foot-brand {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.foot-meta {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.foot-meta a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+/* highlight callout for the killer stat */
+.killer-stat {
+  margin: 56px 0;
+  padding: 48px 40px;
+  background: linear-gradient(135deg, rgba(232, 155, 60, 0.08), rgba(196, 90, 44, 0.04));
+  border: 1px solid var(--amber);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.killer-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(232, 155, 60, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.killer-num {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(80px, 12vw, 160px);
+  line-height: 0.9;
+  color: var(--amber);
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+
+.killer-num em {
+  font-size: 0.5em;
+  color: var(--amber-soft);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.killer-line {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 30px);
+  line-height: 1.35;
+  color: var(--ink);
+  font-weight: 300;
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.killer-line strong {
+  font-weight: 500;
+  color: var(--amber-soft);
+  font-style: italic;
+}
+
+/* note styling */
+.note {
+  font-size: 13px;
+  color: var(--ink-mute);
+  font-style: italic;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-left: 2px solid var(--amber);
+  margin: 24px 0;
+  line-height: 1.55;
+  border-radius: 2px;
+}
+
+/* keywords pill cluster */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.keyword {
+  padding: 7px 14px;
+  background: rgba(232, 155, 60, 0.1);
+  border: 1px solid rgba(232, 155, 60, 0.3);
+  color: var(--amber-soft);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* selection color */
+::selection {
+  background: var(--amber);
+  color: var(--bg);
+}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Digital Audit · Confidential</div>
+    <h1 class="title">Trunk Monk<br>Arborist <em>—</em><br>the visibility gap.</h1>
+    <p class="lede">A focused look at where Google fails to surface a five-star reputation, and the moves to fix it.</p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Prepared for</div>
+        <div class="meta-value">Matthew, Trunk Monk Arborist</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Prepared by</div>
+        <div class="meta-value">Dale Murphy · Southern Reach Digital</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Referred by</div>
+        <div class="meta-value">Craig — EDI Tree &amp; Garden</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- THE 30-SECOND TAKE -->
+<section class="take">
+  <div class="wrap">
+    <div class="section-num">01 — The 30-Second Take</div>
+    <h2 class="section-title">You've earned the trust. <em>You haven't been built the visibility.</em></h2>
+
+    <div class="killer-stat">
+      <div class="killer-num">143<em> ★★★★★</em></div>
+      <div class="killer-line">A perfect <strong>5.0 rating</strong> across 143 Google reviews puts Trunk Monk in the top tier of arborists in Australia. That's the strongest signal you can send Google. The problem is what happens next.</div>
+    </div>
+
+    <div class="take-grid">
+      <div class="take-row">
+        <div class="take-label">The asset</div>
+        <div class="take-content">143 Google reviews at 5.0 stars. 17+ photos. 24/7 availability. A premium reputation already earned, customer by customer.</div>
+      </div>
+      <div class="take-row">
+        <div class="take-label">The gap</div>
+        <div class="take-content">Despite that reputation, the businesses outranking you in Northern Rivers have <strong>far fewer reviews than you</strong> — they win because of how their <strong>websites and Google profiles are built</strong>, not how good their work is.</div>
+      </div>
+      <div class="take-row">
+        <div class="take-label">The opportunity</div>
+        <div class="take-content">Stack the missing visibility on top of what you've already earned, and the rankings should follow within 60–90 days. That's the focus of Phase 1.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S WORKING -->
+<section>
+  <div class="wrap">
+    <div class="section-num">02 — Already Strong</div>
+    <h2 class="section-title">What you don't need to fix.</h2>
+    <p class="section-intro">Before talking gaps, it's worth being clear about what's already working — because it's the foundation we build on, not start from scratch.</p>
+
+    <div class="working-list">
+      <div class="working-item">
+        <h4>The reputation</h4>
+        <p>143 reviews at a clean 5.0 rating. Premium signal. We don't need to manufacture trust — we need to surface it.</p>
+      </div>
+      <div class="working-item">
+        <h4>Photo presence</h4>
+        <p>17+ photos on your Google Business Profile. Most competitors have fewer. Decent baseline; cadence is the upgrade.</p>
+      </div>
+      <div class="working-item">
+        <h4>24/7 availability</h4>
+        <p>Listed and visible. Storm callouts, emergency removals — that's premium territory and it's set up correctly.</p>
+      </div>
+      <div class="working-item">
+        <h4>Primary category</h4>
+        <p>"Tree service" — correct primary category for ranking. Worth adding secondary categories (Arborist service, Stump grinding service) for broader reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE PICTURE -->
+<section>
+  <div class="wrap">
+    <div class="section-num">03 — The Competitive Picture</div>
+    <h2 class="section-title">Why the local market leader is winning despite a <em>weaker</em> review profile.</h2>
+    <p class="section-intro">Tallow Tree Services (Bangalow) currently dominates "arborist Byron Bay" and surrounding searches. Their secret isn't their reviews — it's how they've structured their digital presence.</p>
+
+    <div class="compare">
+      <div class="compare-row head">
+        <div class="compare-cell"></div>
+        <div class="compare-cell tm">Trunk Monk</div>
+        <div class="compare-cell">Tallow Tree Services</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell metric">Google Reviews</div>
+        <div class="compare-cell win">143 · 5.0 stars</div>
+        <div class="compare-cell lose">A fraction of yours</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell metric">Location-specific pages</div>
+        <div class="compare-cell lose">0</div>
+        <div class="compare-cell win">12+ (Byron Bay, Mullumbimby, Lennox Head, Ballina, Lismore, Tweed Heads, Bangalow, etc.)</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell metric">GBP services listed publicly</div>
+        <div class="compare-cell lose">3 of 6 you actually offer</div>
+        <div class="compare-cell win">Full service breadth</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell metric">Reviews surfaced on website</div>
+        <div class="compare-cell lose">3 testimonials in carousel</div>
+        <div class="compare-cell">Embedded throughout site</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell metric">Ranks above you for "arborist Byron Bay" in our checks</div>
+        <div class="compare-cell lose">—</div>
+        <div class="compare-cell win">Yes, despite a far weaker review profile</div>
+      </div>
+    </div>
+
+    <div class="note">The takeaway: Tallow's advantage is structural, not credibility-based. Structural problems are fixable. Once we close the structural gap, your stronger reputation should start tipping searches in your direction.</div>
+  </div>
+</section>
+
+<!-- WHERE GOOGLE CAN'T FIND YOU -->
+<section>
+  <div class="wrap">
+    <div class="section-num">04 — Where Google Can't Find You</div>
+    <h2 class="section-title">Local SEO gaps — <em>same-day fixable.</em></h2>
+    <p class="section-intro">Three concrete issues blocking your Google rankings. Each one is a same-day or same-week fix, and each one ties directly to your "rank highest" goal.</p>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-num">01</div>
+        <div class="finding-body">
+          <h4>Half your services are invisible to Google.</h4>
+          <p>Your Google Business Profile lists three services publicly: Tree removal, Tree stump removal, Tree trimming and pruning. Your website lists six: those three plus Consulting Arborist, Wood Chipping, and Habitat Installation.</p>
+          <p>Google ranks GBPs partly on the services you've listed. Anyone searching "consulting arborist Byron Bay" or "habitat installation Mullumbimby" will not find you, even though those are services you offer.</p>
+          <span class="impact">Same-day fix · High ranking impact</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">02</div>
+        <div class="finding-body">
+          <h4>Your service area copy is too vague to rank locally.</h4>
+          <p>Your website describes your service area as "Northern NSW and SE QLD." Google needs city-level anchors — specific suburb names — to rank you for local searches like "arborist Byron Bay" or "tree removal Mullumbimby."</p>
+          <p>Tallow Tree Services has a dedicated landing page for every suburb they serve. That's how they show up first when someone in Lennox Head searches for an arborist. You don't have those pages yet, so even when someone searches with strong intent, you're invisible.</p>
+          <span class="impact">Phase 2 fix · Highest ranking impact</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">03</div>
+        <div class="finding-body">
+          <h4>Your customers are telling Google what to rank you for. Your website isn't listening.</h4>
+          <p>Google has extracted these themes from your reviews — meaning these are the search intents your existing customers describe in their own words:</p>
+          <div class="keywords">
+            <span class="keyword">Dead gum tree removal</span>
+            <span class="keyword">Lightning struck trees</span>
+            <span class="keyword">Palm removal</span>
+            <span class="keyword">Minimise impacts</span>
+            <span class="keyword">+6 more</span>
+          </div>
+          <p style="margin-top: 18px;">None of these specific phrases appear on your website. Each one is a search-intent keyword, ready to be turned into ranking content. This is rare: most clients don't have this data — yours is sitting there for free.</p>
+          <span class="impact">Phase 2 fix · Compounding impact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSION DROP-OFFS -->
+<section>
+  <div class="wrap">
+    <div class="section-num">05 — Where Premium Clients Drop Off</div>
+    <h2 class="section-title">Visibility gets them in. <em>Conversion turns them into paying jobs.</em></h2>
+    <p class="section-intro">Even if Phase 1 doubles your traffic, the conversion side of the funnel needs work to make sure those visitors turn into the premium quotes you're chasing.</p>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-num">04</div>
+        <div class="finding-body">
+          <h4>The trust on Google isn't on your website.</h4>
+          <p>Your homepage carousel shows three customer testimonials. Anyone landing on your site who hasn't seen your Google profile — say, a referral clicking your URL, or a Facebook visitor — sees a fraction of the proof you've built.</p>
+          <p>For a business chasing premium clients who research before they call, your 143 five-star reviews need to be the loudest thing on every page.</p>
+          <span class="impact">Phase 2 fix · Direct conversion impact</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">05</div>
+        <div class="finding-body">
+          <h4>Two typos on your services page.</h4>
+          <p>"consultationg" and "oppourtunities" — both currently visible on the live services page. Small thing, but the premium clients you're targeting notice details, and it's the kind of friction that makes a careful buyer pause.</p>
+          <span class="impact">Same-day fix · Trust signal</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">06</div>
+        <div class="finding-body">
+          <h4>The current website is built on a platform that limits what we can fix.</h4>
+          <p>Your site is on Wix, which limits the SEO controls and structural changes needed to add proper location pages, schema markup, and the keyword targeting your reviews are pointing toward. To execute the full Phase 2 plan cleanly, the site needs a rebuild on a platform that gives us those levers.</p>
+          <p>This is also what we did for Craig at EDI Tree &amp; Garden — same Wix-to-modern-platform move, ready to ship faster with a tighter setup.</p>
+          <span class="impact">Phase 2 fix · Foundation for everything else</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 90-DAY PLAN -->
+<section>
+  <div class="wrap">
+    <div class="section-num">06 — The 90-Day Plan</div>
+    <h2 class="section-title">Phase 1 first. <em>Prove results before you spend more.</em></h2>
+    <p class="section-intro">A deliberate phased approach. Phase 1 fixes the highest-leverage items right now and gives you measurable improvement. Phase 2 is quoted separately, only if Phase 1 results justify the next step.</p>
+
+    <div class="plan">
+      <div class="phase">
+        <div class="phase-marker">
+          <div class="phase-tag">Phase 1 — Now</div>
+          <div class="phase-weeks">Weeks 1–12</div>
+        </div>
+        <div class="phase-content">
+          <h3>Google Business Profile optimisation &amp; management</h3>
+          <p class="phase-desc">Unlock the rankings your reputation has already earned. Same-day fixes for the GBP gaps, then ongoing management for compounding results.</p>
+          <ul class="phase-list">
+            <li>Add all six services to GBP (Consulting Arborist, Wood Chipping, Habitat Installation + the three already listed)</li>
+            <li>Add secondary categories (Arborist service, Stump grinding service, Land clearing service)</li>
+            <li>Optimise GBP description with local keywords and review-extracted phrases</li>
+            <li>Build review velocity strategy — convert recent jobs into a steady stream of new reviews</li>
+            <li>Weekly Google Posts (job updates, before/afters, seasonal advice) — these affect ranking</li>
+            <li>Photo upload cadence — fresh photos signal active business to Google's algorithm</li>
+            <li>Q&amp;A seeding — answer the questions premium clients ask before they call</li>
+            <li>Monthly insights report — what's ranking, what's converting, what's next</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-marker">
+          <div class="phase-tag">Phase 2 — When ready</div>
+          <div class="phase-weeks">Quoted later</div>
+        </div>
+        <div class="phase-content">
+          <h3>Website rebuild with location pages &amp; review surfacing</h3>
+          <p class="phase-desc">Once Phase 1 has lifted your rankings and proved the model works, Phase 2 captures the traffic with a rebuilt site designed for the premium client journey.</p>
+          <ul class="phase-list">
+            <li>Migrate off Wix to a faster, SEO-flexible platform (same approach as EDI Tree &amp; Garden)</li>
+            <li>Dedicated location landing pages for Byron Bay, Mullumbimby, Lennox Head, Ballina, Lismore, Tweed Heads</li>
+            <li>Live Google reviews widget — your 143 five-star reviews surfaced on every page</li>
+            <li>Service pages built around the keywords your reviews extract (palm removal, lightning struck trees, etc.)</li>
+            <li>Schema markup for local business + reviews — gives Google the structured data it ranks on</li>
+            <li>Mobile-first design tuned for the "I need an arborist now" moment</li>
+            <li>Typo and content audit across the existing copy</li>
+          </ul>
+          <p class="phase-desc" style="margin-top: 24px; font-style: italic;">Quoted separately after Phase 1 results — typically 60–90 days in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="invest">
+  <div class="wrap">
+    <div class="section-num">07 — Investment</div>
+    <h2 class="section-title">Phase 1 — start here.</h2>
+    <p class="section-intro">A single, transparent price for the first 90 days. Phase 2 is held back deliberately — we'd rather earn it with results than ask for it now.</p>
+
+    <div class="invest-grid">
+      <div class="invest-card featured">
+        <div class="invest-tag">Phase 1 · 90 days</div>
+        <div class="invest-name">GBP optimisation &amp; management</div>
+        <div class="invest-price">$850 <small>incl. GST</small></div>
+        <div class="invest-sub">One-time. Covers setup + first three months of management.</div>
+        <ul class="invest-list">
+          <li>Full GBP optimisation (services, categories, description, photos)</li>
+          <li>Review velocity strategy &amp; setup</li>
+          <li>Three months of weekly Google Posts</li>
+          <li>Three months of photo and Q&amp;A management</li>
+          <li>Monthly performance reports</li>
+          <li>Direct line to me for questions any time</li>
+        </ul>
+      </div>
+
+      <div class="invest-card">
+        <div class="invest-tag">Phase 2 · later</div>
+        <div class="invest-name">Website rebuild + ongoing</div>
+        <div class="invest-price">TBQ</div>
+        <div class="invest-sub">Quoted separately once Phase 1 results are in.</div>
+        <ul class="invest-list">
+          <li>Quoted only if Phase 1 hits ranking targets</li>
+          <li>Pricing reflects actual scope after audit of results</li>
+          <li>Ongoing GBP management continues at $199/mo</li>
+          <li>No commitment now — earn the next step</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">Why phased? Because you came in saying you want clients who pay properly — and that mindset cuts both ways. You shouldn't pay for a website rebuild before the first phase has proved itself. If Phase 1 doesn't move the needle, Phase 2 doesn't happen.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-eyebrow">Next Step</div>
+    <h2 class="cta-title">Thirty minutes on the phone <em>and we can be moving by next week.</em></h2>
+    <p class="cta-sub">A short call to walk through the audit, answer questions, and confirm the scope. If it's a fit, Phase 1 starts the day the invoice clears.</p>
+    <div class="cta-actions">
+      <a href="tel:+61PHONE_PLACEHOLDER" class="btn btn-primary">Call Dale &nbsp;→</a>
+      <a href="mailto:hello@southernreachdigital.com.au?subject=Trunk%20Monk%20-%20ready%20to%20chat" class="btn btn-secondary">Email instead</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-brand">Southern Reach Digital</div>
+      <div class="foot-meta">
+        Prepared by Dale Murphy · <a href="mailto:hello@southernreachdigital.com.au">hello@southernreachdigital.com.au</a> · <a href="https://southernreachdigital.com.au">southernreachdigital.com.au</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
